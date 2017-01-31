@@ -16,6 +16,6 @@ Run the application in local:
 Cloud & REST APIdetails in WIKI:
 https://github.com/aslamsyed/cim_code_exercise/wiki/CIM-Ad-Campaign-Code-Exercise
 
-The following are not required but might be nice additions to the exercise.
+Bonus: The following are not required but might be nice additions to the exercise.
 https://github.com/aslamsyed/cim_code_exercise/wiki/Nice-to-have
 
