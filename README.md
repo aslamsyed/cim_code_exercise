@@ -11,11 +11,7 @@ Run the application:
 2) mvn clean install
 3) Go to target and execute java -jar cim_code_exercise-0.0.1-SNAPSHOT.jar
 
-Mongo Database Details:
-Note: You need mongo client to connect to mongo db cloud using below command.
-mongo ds137729.mlab.com:37729/cim -u cim_user -p cim_password
-
-REST WIKI:
+More Details in below WIKI:
 https://github.com/aslamsyed/cim_code_exercise/wiki/CIM-Ad-Campaign-Code-Exercise
 
 
