@@ -16,8 +16,5 @@ https://github.com/aslamsyed/cim_code_exercise/wiki/CIM-Ad-Campaign-Code-Exercis
 
 
 The following are not required but might be nice additions to the exercise.
+https://github.com/aslamsyed/cim_code_exercise/wiki/Nice-to-have
 
-* Describe a fault tolerant deployment topology for your application, and the types of failures it would and would not be resilient to.
-* Discuss the advantages and disadvantages of your persistence mechanism.
-* Add a URL to return a list of all campaigns as JSON.
-* Add support for multiple ad campaigns per partner.
