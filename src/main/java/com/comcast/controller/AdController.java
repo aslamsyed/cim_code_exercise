@@ -100,8 +100,6 @@ public class AdController {
 				if(isTokenValid(ad.getSessionToken(), ad.getDuration())){
 					ad.setStatus("Active");
 					activeList.add(ad);
-				}else{
-					throw new IllegalArgumentException("Your Ad is expired");
 				}
 			}
 		}
