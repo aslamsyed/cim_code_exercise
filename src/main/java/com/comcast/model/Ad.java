@@ -8,6 +8,8 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author Aslam Syed
  *
@@ -55,7 +57,7 @@ public class Ad implements Serializable{
 	public void setAd_content(String ad_content) {
 		this.ad_content = ad_content;
 	}
-
+	@JsonIgnore
 	public long getSessionToken() {
 		return sessionToken;
 	}

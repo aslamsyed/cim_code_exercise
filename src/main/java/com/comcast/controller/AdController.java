@@ -84,6 +84,14 @@ public class AdController {
 	}
 	
 	
+	/*
+	 * Get AD by Parnter ID API
+	 */
+	@RequestMapping(value="/all", method = RequestMethod.GET)
+	public List <Ad> getAllAds() {
+		return adRepository.findAll();
+	}
+	
 	@ExceptionHandler(IllegalArgumentException.class)
 	void handleBadRequests(HttpServletResponse response) throws IOException {
 	    response.sendError(HttpStatus.BAD_REQUEST.value());
