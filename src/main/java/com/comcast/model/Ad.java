@@ -5,6 +5,7 @@ package com.comcast.model;
 
 import java.io.Serializable;
 
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -32,7 +33,9 @@ public class Ad implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Id
+	String id;
 	String partner_id;
 	int duration;
 	String ad_content;
@@ -57,6 +60,7 @@ public class Ad implements Serializable{
 	public void setAd_content(String ad_content) {
 		this.ad_content = ad_content;
 	}
+
 	@JsonIgnore
 	public long getSessionToken() {
 		return sessionToken;
@@ -72,6 +76,14 @@ public class Ad implements Serializable{
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 

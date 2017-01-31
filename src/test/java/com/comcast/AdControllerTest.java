@@ -42,9 +42,9 @@ public class AdControllerTest extends TestCase {
 		list.add(new Ad("102", 30, "Honda Ad", new Date().getTime()));
 		
 		when(adRepository.findAll()).thenReturn(list);
-		Ad ad = adController.getAd("100");
+		List <Ad> adList = (List<Ad>) adController.getAd("100");
 		verify(adRepository).findAll();
-		assertEquals(ad.getAd_content(), "BMW Ad");
+		assertEquals(adList.get(0).getAd_content(), "BMW Ad");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -67,7 +67,7 @@ public class AdControllerTest extends TestCase {
 	public void testPostAd() {
 		Ad ad = new Ad("100", 30, "BMW Ad", new Date().getTime());
 		when(adRepository.save(Mockito.any(Ad.class))).thenReturn(ad);
-		 Map<String,Object> response = adController.createAd(ad);
+		 Map<String,Object> response = adController.createAd(ad, null);
 		verify(adRepository).findAll();
 		assertEquals(response.get("status"), "1");
 	}
@@ -76,14 +76,14 @@ public class AdControllerTest extends TestCase {
 	public void validatePostAdMissingPartnerId() {
 		Ad ad = new Ad(null, 30, "BMW Ad", new Date().getTime());
 		when(adRepository.save(Mockito.any(Ad.class))).thenReturn(ad);
-		adController.createAd(ad);
+		adController.createAd(ad, null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void validatePostAdMissingAdContent() {
 		Ad ad = new Ad("100", 30, null, new Date().getTime());
 		when(adRepository.save(Mockito.any(Ad.class))).thenReturn(ad);
-		adController.createAd(ad);
+		adController.createAd(ad, null);
 	}
 
 	@Ignore
