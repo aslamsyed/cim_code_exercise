@@ -119,31 +119,6 @@ public class AdController {
 	}
 	
 	
-	/*
-	 * Post Ad API does support multiple Ads for each partner
-	 */
-	/*@RequestMapping(value="/mutiple/support", method = RequestMethod.POST)
-	public Map<String, Object> createMutlipleAd(@RequestBody Ad ad) {
-		if(StringUtils.isEmpty(ad.getPartner_id())){
-			throw new IllegalArgumentException("Partner Id is mandatory");
-		}
-		if(StringUtils.isEmpty(ad.getAd_content())){
-			throw new IllegalArgumentException("Ad Content is mandatory");
-		}
-		Map<String, Object> dataMap = new HashMap<String, Object>();
-		List <Ad> adList = adRepository.findAll();
-		for(Ad adFromDB: adList){
-			if(ad.getPartner_id().equals(adFromDB.getPartner_id())){
-				throw new IllegalArgumentException("Partner Id is already associated with the valid Ad in the system");
-			}
-		}
-		ad.setSessionToken(new Date().getTime());
-		ad = adRepository.save(ad);
-		dataMap.put("message", "Ad created successfully");
-		dataMap.put("status", "1");
-		dataMap.put("ad", ad);
-		return dataMap;
-	}*/
 	
 	
 	@ExceptionHandler(IllegalArgumentException.class)
@@ -153,7 +128,8 @@ public class AdController {
 	}
 	
     public static boolean isTokenValid(long token, int duration) {
-    	duration = duration * 60000;
+    	//duration = duration * 60000;
+    	duration = duration * 1000;
         Long todayTime = new Date().getTime();
         Long timeElapsed = todayTime - token;
        return timeElapsed <= duration;
