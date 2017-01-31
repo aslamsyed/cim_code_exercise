@@ -19,3 +19,4 @@ https://github.com/aslamsyed/cim_code_exercise/wiki/CIM-Ad-Campaign-Code-Exercis
 Bonus: The following are not required but might be nice additions to the exercise.
 https://github.com/aslamsyed/cim_code_exercise/wiki/Nice-to-have
 
+Visual VM or App Dynamics can be used for JVM Tuning and memory leak issues 
